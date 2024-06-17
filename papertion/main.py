@@ -12,7 +12,7 @@ def main():
 @main.command("prop")
 def update_db_properties():
     """Add necessary properties to the database."""
-    notion.update_db_properties()
+    notion.set_properties()
 
 
 @main.command("doi")
