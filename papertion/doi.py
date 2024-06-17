@@ -30,6 +30,7 @@ def get_item_from_doi(doi_str: str) -> Item:
         title = "".join(info["title"])
         first = authors[0]
         journal = info["container-title"][0]
+        url = info["URL"]
 
         return Item(
             name=name,
@@ -38,6 +39,7 @@ def get_item_from_doi(doi_str: str) -> Item:
             year=year,
             journal=journal,
             authors=authors,
+            url=url,
         )
     else:
         raise Exception(

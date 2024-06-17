@@ -15,6 +15,7 @@ def test_doi():
                 year=2024,
                 journal="Physical Review X",
                 authors=["David G. Clark", "L. F. Abbott"],
+                url="http://dx.doi.org/10.1103/physrevx.14.021001",
             ),
         ),
         (
@@ -26,6 +27,7 @@ def test_doi():
                 year=1988,
                 journal="Physical Review Letters",
                 authors=["H. Sompolinsky", "A. Crisanti", "H. J. Sommers"],
+                url="http://dx.doi.org/10.1103/physrevlett.61.259",
             ),
         ),
     ]

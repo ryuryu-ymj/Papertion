@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "papertion"
+version = "0.1.0"
+description = ""
+authors = ["ryuryu-ymj <33318253+ryuryu-ymj@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.31.0"
+notion-client = "^2.2.1"
+pytest = "^8.2.1"
+click = "^8.1.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+papertion = "papertion.main:main"

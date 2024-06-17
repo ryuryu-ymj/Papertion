@@ -19,4 +19,5 @@ def get_item_from_doi(doi_str: str):
 doi = "10.1088/1742-5468/aceb4f"
 doi = "10.1371/journal.pcbi.1009739"
 doi = "10.1103/PhysRevX.14.021001"
+doi = "https://doi.org/10.1103/PhysRevLett.61.259"
 get_item_from_doi(doi)
