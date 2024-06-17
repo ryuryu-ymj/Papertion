@@ -80,10 +80,11 @@ def insert_item(item: Item):
     for name, field in prop_name.items():
         prop[name] = prop_field[field]
 
-    pprint(prop)
+    print(f"Adding new item `{item.name}` to the database...")
     client.pages.create(
         **{
             "parent": {"database_id": db_id},
             "properties": prop,
         },
     )
+    print("Done.")
