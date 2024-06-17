@@ -1,13 +1,32 @@
+import os
+import sys
+from pathlib import Path
 from pprint import pprint
-import tomllib
+
 import notion_client as nc
+import tomllib
 
 from papertion.item import Item, ntprop_type
 
 
+config_env = "PAPERTION_CONFIG"
+
+
 def get_config() -> (nc.Client, int, dict):
-    with open("config.toml", "rb") as f:
-        config = tomllib.load(f)
+    fpath = os.environ.get(config_env)
+    if fpath is None:
+        fpath = Path.home() / ".config" / "papertion.toml"
+    else:
+        fpath = Path(fpath)
+
+    try:
+        with fpath.open("rb") as f:
+            config = tomllib.load(f)
+    except IOError as e:
+        print(e)
+        print(f"Create config file: `{fpath}`")
+        print(f"Or set config file location with `{config_env}` environment variable.")
+        sys.exit(1)
 
     token = config["notion"]["token_key"]
     client = nc.Client(auth=token)
